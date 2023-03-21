@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<style>
+body {
+  background-color: yellow;
+}
+
+h1 {
+  text-align: center;
+}
+
+</style>
+<html>
+
+    <head>
+        <h1>School News</h1>
+        <br>
+        </br>
+    </head>
+
+    <body>
+        <div>
+
+        {% if pagelist %}
+        <ul>
+            {% for page in pagelist %}
+
+            <h2>{{ page.title }}</h2>
+
+            <p><i> by {{ page.author }}. &emsp; {{ page.date }}</i></p>
+            <p></p>{{ page.description }}</p>
+            {% endfor %}
+     </ul>
+    {% else %}
+        <strong>There are no categories present.</strong>
+    {% endif %}
+    </div>
+
+    </body>
+</html>
